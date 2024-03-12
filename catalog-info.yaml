@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: confident-coral-nodejs-gitops
+  description: This is GitOps manifest for confident-coral-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: confident-coral-nodejs
+    janus-idp.io/tekton: confident-coral-nodejs 
+    backstage.io/kubernetes-id: confident-coral-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:confident-coral-nodejs
